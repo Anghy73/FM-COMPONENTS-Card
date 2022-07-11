@@ -1,0 +1,124 @@
+:root {
+    --primary-color: hsl(0, 0%, 95%);
+    --first-card: hsl(31, 77%, 52%);
+    --second-card: hsl(184, 100%, 22%);
+    --three-card: hsl(179, 100%, 13%);
+    --text-color: hsla(0, 0%, 100%, 0.75);
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: grid;
+    place-content: center;
+    width: 100%;
+}
+
+.grid-container {
+    max-width: 800px;
+    display: grid;
+    grid-template-rows: repeat(3, minmax(200px, 440px));
+    margin: 8rem 2.8rem;
+    border-radius: .8rem;
+    overflow: hidden;
+
+}
+
+.grid-item {
+    display: grid;
+    place-items: center start;
+    padding: 4rem;
+}
+
+.grid-item img {
+    width: 60px;
+}
+
+.grid-item h2 {
+    font-size: 4rem;
+    color: var(--primary-color);
+    font-family: "Big Shoulders Display";
+}
+
+.grid-item p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 2.5rem;
+    color: var(--text-color);
+    font-family: "Lexend Deca";
+}
+
+.grid-item button {
+    padding: 1.5rem 2.5rem;
+    border-radius: 2rem;
+    border: none;
+    background-color: var(--primary-color);
+    font-family: "Lexend Deca";
+    font-weight: 500;
+}
+
+.grid-item button:hover {
+    border: 2px solid var(--primary-color);
+}
+
+.one {
+    background-color: var(--first-card);
+}
+
+.one button {
+    color: var(--first-card);
+}
+
+.one button:hover {
+    background-color: var(--first-card);
+    color: var(--primary-color);
+}
+
+.two {
+    background-color: var(--second-card);
+}
+
+.two button {
+    color: var(--second-card);
+}
+
+.two button:hover {
+    background-color: var(--second-card);
+    color: var(--primary-color);
+}
+
+.three {
+    background-color: var(--three-card);
+}
+
+.three button {
+    color: var(--three-card);
+}
+
+.three button:hover {
+    background-color: var(--three-card);
+    color: var(--primary-color);
+}
+
+@media (min-width: 500px) {
+    main {
+        height: 100vh;
+    }
+    .grid-container {
+        max-height: 500px;
+        grid-template-columns: repeat(3, minmax(10px, 900px));
+        grid-template-rows: 1fr;
+    }
+    .grid-item p {
+        margin-bottom: 5rem;
+    }
+}
